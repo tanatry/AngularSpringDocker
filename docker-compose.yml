@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  backend:
+    build: 
+      "/new_backend"
+    ports: 
+      - "8080:8080"
+  forntend:
+    build: 
+      "/angular-project"
+    ports: 
+      - "4200:4200"
+    links:
+      - "backend"
+    depends_on:
+      - "backend"

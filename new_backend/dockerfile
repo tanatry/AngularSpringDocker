@@ -1,0 +1,11 @@
+FROM openjdk:8-jdk-alpine
+
+WORKDIR /usr/src/backend
+
+EXPOSE 8080
+
+ARG JAR_FILE=target/backend-example.war
+
+ADD ${JAR_FILE} /usr/src/backend/app.jar
+
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/usr/src/backend/app.jar"]
