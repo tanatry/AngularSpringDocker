@@ -2,13 +2,13 @@ version: '3'
 
 services:
   backend:
-    build: 
-      "/new_backend"
+    image: 
+      "tanatry/back-test"
     ports: 
       - "8080:8080"
   forntend:
-    build: 
-      "/angular-project"
+    image: 
+      "tanatry/fornt-test"
     ports: 
       - "4200:4200"
     links:
